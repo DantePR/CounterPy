@@ -74,7 +74,7 @@ with open('/home/pi/projects/gpioCounter/config/counters.config') as f:
 def httpPostReq(values,inboundURL):
     my_logprint(values)
     params = urllib.urlencode(values)
-    my_logprint("httpRequest " + inboundURL)
+    my_logprint("httpPostRequest " + inboundURL)
     req = urllib2.Request(inboundURL, params)
     try:
         response = urllib2.urlopen(req)
@@ -82,17 +82,71 @@ def httpPostReq(values,inboundURL):
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
         onlineMode = False
-        return    
-    data = json.loads(response.read())
-    response.close()
-    my_logprint(data)
+        data ={} 
+    except urllib2.URLError as e:
+        my_logprint("URLError")
+        onlineMode = False
+        data ={} 
+    else:
+        data = response.read()
+        response.close()
+        my_logprint(data)
+           
     return data
+
+def httpGetReq(values,inboundURL):
+    my_logprint(values)
+    params = urllib.urlencode(values)
+    my_logprint("httpGetRequest " + inboundURL)
+    
+    try:
+        response = urllib2.urlopen(inboundURL + '?' + params)
+        #onlineMode = True
+    except urllib2.HTTPError as e:
+        my_logprint(str(e.code) + " " + e.read())
+        #onlineMode = False
+        data ={}
+    except urllib2.URLError as e:
+        my_logprint("URLError")
+        #onlineMode = False
+        data ={}
+    else:
+        data = response.read()
+        response.close()
+        my_logprint(data)
+        
+    return data 
+    
+    
+    
+
+def checkIfOnline(values,inboundURL):
+    my_logprint(values)
+    params = urllib.urlencode(values)
+    req = urllib2.Request(inboundURL, params)
+    try:
+        response = urllib2.urlopen(req)
+     
+    except urllib2.HTTPError as e:
+        my_logprint(str(e.code) + " " + e.read())
+        onlineMode = False
+        return False
+    except urllib2.URLError as e:
+        my_logprint("URLError")
+        onlineMode = False
+        return False
+    else:
+        onlineMode = True
+        return True
+        
+        
+      
     
 
 def pullCounterValFromCloud(in_counterType,machineID):
-    values = dict(machineID=machineID, counterType=in_counterType)
+    values = dict(machine_id=machineID)
     my_logprint(values)
-    myData = httpPostReq(values,COUNTERVAL_URL)
+    myData = httpGetReq(values,COUNTERVAL_URL)
     return myData
 
 
@@ -110,7 +164,7 @@ for k in Counters.keys():
     if onlineMode == True:
         myData = pullCounterValFromCloud(Counters[str(k)].counterType,\
                                          Counters[str(k)].machineName)
-        
+        my_logprint("MyData Fetched:"+ str(len(myData)))
         if os.path.isfile(fname):
             my_logprint("File exists " +str(k) + ".dat")
             with open(fname) as fc:
@@ -129,43 +183,62 @@ for k in Counters.keys():
                 my_logprint("pinCounterTSFile: " +str(tempCounterTS))
                 
                 
-        if myData is None:
+        if len(myData) == 0:
             my_logprint("No Data from web found")
             Counters[str(k)].totalcount = pinCounterValueFile
+            my_logprint("GPIO " + str(k) + " Started with : " + str(pinCounterValueFile))
         else:
+            myDataObj = json.loads(myData)
             if Counters[str(k)].counterType == 'IN':
-                tempWebDate = myData.max_in_date.split(',')
-                pinCounterValueWeb = int(myData.max_in_count)
+                for i in myDataObj:
+                    tempWebDate = i['max_in_date']
+                    pinCounterValueWeb = int(i['max_in_count'])
+                my_logprint("max_in_date:" + str(tempWebDate))
+                my_logprint("max_in_count:" + str(pinCounterValueWeb))     
             else:
-                tempWebDate = myData.max_out_date.split(',')
-                pinCounterValueWeb = int(myData.max_out_count)
-            
-            pinCounterTSWeb  = datetime.datetime(tempWebDate[0],\
-                                           tempWebDate[1],\
-                             tempWebDate[2],tempWebDate[3],\
-                             tempWebDate[4],tempWebDate[5])
+                for i in myDataObj:
+                    tempWebDate = i['max_out_date']
+                    pinCounterValueWeb = int(i['max_out_count'])
+                my_logprint("max_out_date:" + str(tempWebDate))
+                my_logprint("max_out_count:" + str(pinCounterValueWeb))     
+            tempWebDatelist =  tempWebDate.split('T')
+            tempDatePartlist = tempWebDatelist[0].split('-')
+            tempTimePartlist = tempWebDatelist[1].split(':')
+                
+            for s in tempDatePartlist:
+                my_logprint(s)
+            for s in tempTimePartlist:
+                my_logprint(s)
+           
+            pinCounterTSWeb  = datetime.datetime(int(tempDatePartlist[0]),\
+                                           int(tempDatePartlist[1]),\
+                             int(tempDatePartlist[2]),int(tempTimePartlist[0]),\
+                             int(tempTimePartlist[1]),int(tempTimePartlist[2][:2]))
             
             if pinCounterTSWeb > pinCounterTSFile:
-                Counters[str(k)].totalcount = pinCounterValueWeb  
+                Counters[str(k)].totalcount = pinCounterValueWeb
+                my_logprint("GPIO " + str(k) + " type(" + \
+                            Counters[str(k)].counterType + \
+                            ") Started with web value : " + \
+                            str(pinCounterValueWeb))  
             else:
-                Counters[str(k)].totalcount = pinCounterTSFile 
+                Counters[str(k)].totalcount = pinCounterValueFile 
+                my_logprint("GPIO " + str(k) + " type(" + \
+                            Counters[str(k)].counterType + \
+                            ") Started with file value : " + \
+                            str(pinCounterValueFile))
         #end if data is None
     else:
         #OFFLINE
+        
         if os.path.isfile(fname):
             with open(fname) as fc:
                 tempLine = fc.read()
                 tempList = tempLine.split()
                 pinCounterValueFile = int(tempList[0])
-                tempCounterTS = tempList[1]
-                tempCounterTSList = tempCounterTS.split(',')
-                pinCounterTSFile = datetime.datetime(tempCounterTSList[0],\
-                                   tempCounterTSList[1],\
-                                   tempCounterTSList[2],\
-                                   tempCounterTSList[3],\
-                                   tempCounterTSList[4],\
-                                   tempCounterTSList[5])
-        
+ 
+        Counters[str(k)].totalcount = pinCounterValueFile
+        my_logprint("GPIO " + str(k) + " type(" + Counters[str(k)].counterType + ") Started with file value : " + str(pinCounterValueFile))
     #end if online   
         
         
@@ -182,8 +255,8 @@ for k in Counters.keys():
 def writeCounterFile(filepath,counterAmt):
     d = datetime.datetime.now()
     f = open(filepath, 'w')
-    f.write(counterAmt + " " + d.year + ","+ d.month + "," + d.day + "," + \
-            d.hour + "," + d.minute+ "," + d.second )
+    f.write(str(counterAmt) + " " + str(d.year) + ","+ str(d.month) + "," + str(d.day) + "," + \
+            str(d.hour) + "," + str(d.minute)+ "," + str(d.second) )
     
     
 
@@ -227,11 +300,11 @@ try:
         time.sleep(int(SLEEP_SECONDS)) 
         if BOXMODE == 'ONLINE':
             hbValues = dict(boxId=BOXID)
-            data = httpPostReq(hbValues,HEART_BEAT_URL)
-            if myData is None:
+            onli = checkIfOnline(hbValues,HEART_BEAT_URL)
+            if onli == False:
                 my_logprint("No Data from HeartBeat .. going offline")
                 onlineMode = False
-            else:
+            elif onli == True:
                 my_logprint("HeartBeat Found .. going onLine")
                 onlineMode = True
                 
