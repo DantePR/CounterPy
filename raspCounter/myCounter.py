@@ -1,12 +1,13 @@
 #!/usr/bin/env python2.7
 import time
 import datetime
-import RPi.GPIO as GPIO
+import RPIO
 import urllib
 import urllib2
 import os.path
 import json
-GPIO.setmode(GPIO.BCM)
+
+#GPIO.setmode(GPIO.BCM)
 
 class counterObj: 
     def __init__(self, gpioPin,counterType,machineName,totalcount):
@@ -31,7 +32,7 @@ print "Hi, Starting .... you reading this call 480-249-1942"
 print "Parameters in File: "
 print " "
 
-with open('/home/pi/projects/gpioCounter/config/endpoint.config') as c:
+with open('/media/USBHDD/projects/gpioCounter/config/endpoint.config') as c:
     for line in c:
         line = line.rstrip()
         mySetupList = line.split('=');
@@ -57,7 +58,7 @@ def my_logprint(message):
         print message    
 
 
-with open('/home/pi/projects/gpioCounter/config/counters.config') as f:
+with open('/media/USBHDD/projects/gpioCounter/config/counters.config') as f:
     for line in f:
         line = line.rstrip()
         myList = line.split()
@@ -139,6 +140,13 @@ def checkIfOnline(values,inboundURL):
         onlineMode = True
         return True
         
+def myHttpPost(channel):
+    myChannelCounter = Counters[channel]
+    values = dict(machineID=myChannelCounter.machineName,\
+                   counterType=myChannelCounter.counterType,\
+                    totalCount=str(myChannelCounter.totalcount))
+    data = httpPostReq(values,COUNTERPOST_URL)
+    my_logprint(data)
         
       
     
@@ -149,17 +157,45 @@ def pullCounterValFromCloud(in_counterType,machineID):
     myData = httpGetReq(values,COUNTERVAL_URL)
     return myData
 
+def writeCounterFile(filepath,counterAmt):
+    d = datetime.datetime.now()
+    f = open(filepath, 'w')
+    f.write(str(counterAmt) + " " + str(d.year) + ","+ str(d.month) + "," + str(d.day) + "," + \
+            str(d.hour) + "," + str(d.minute)+ "," + str(d.second) )
+    
+    
 
+    
+def my_callback(gpio_id, val):
+    myCallBackCount = Counters[str(gpio_id)]
+    myCallBackCount.add_tick(1)
+    my_logprint("Edge detected on " + str(gpio_id))
+    fname = '/media/USBHDD/projects/gpioCounter/data/' + str(gpio_id) + ".dat"
+    if BOXMODE == "ONLINE":
+        myHttpPost(str(gpio_id))
+        if onlineMode == False:    
+            writeCounterFile(fname,myCallBackCount.totalcount)
+    else:
+        writeCounterFile(fname,myCallBackCount.totalcount)
+        
+        
+        
 
 
 for k in Counters.keys():
-    GPIO.setup(int(k), GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    #GPIO.setup(int(k), GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    RPIO.add_interrupt_callback(int(k), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                                 threaded_callback=True,debounce_timeout_ms=10)
+    #RPIO.add_interrupt_callback(int(k), my_callback, pull_up_down=RPIO.PUD_UP,\
+    #                             threaded_callback=True)
+    #RPIO.add_interrupt_callback(int(k), my_callback, pull_up_down=RPIO.PUD_OFF,\
+    #                             threaded_callback=True,debounce_timeout_ms=50)
     
     pinCounterValueFile = 0
     pinCounterTSFile = datetime.datetime(1982,8,5,0,0,0)
     pinCounterValueWeb = 0
     pinCounterTSWeb = datetime.datetime(1982,8,5,0,0,0)
-    fname = '/home/pi/projects/gpioCounter/data/' + str(k)+ ".dat"
+    fname = '/media/USBHDD/projects/gpioCounter/data/' + str(k)+ ".dat"
     
     if onlineMode == True:
         myData = pullCounterValFromCloud(Counters[str(k)].counterType,\
@@ -173,12 +209,12 @@ for k in Counters.keys():
                 pinCounterValueFile = int(tempList[0])
                 tempCounterTS = tempList[1]
                 tempCounterTSList = tempCounterTS.split(',')
-                pinCounterTSFile = datetime.datetime(tempCounterTSList[0],\
-                                   tempCounterTSList[1],\
-                                   tempCounterTSList[2],\
-                                   tempCounterTSList[3],\
-                                   tempCounterTSList[4],\
-                                   tempCounterTSList[5])
+                pinCounterTSFile = datetime.datetime(int(tempCounterTSList[0]),\
+                                   int(tempCounterTSList[1]),\
+                                   int(tempCounterTSList[2]),\
+                                   int(tempCounterTSList[3]),\
+                                   int(tempCounterTSList[4]),\
+                                   int(tempCounterTSList[5]))
                 my_logprint("pinCounterValueFile: " +str(pinCounterValueFile))
                 my_logprint("pinCounterTSFile: " +str(tempCounterTS))
                 
@@ -222,7 +258,8 @@ for k in Counters.keys():
                             ") Started with web value : " + \
                             str(pinCounterValueWeb))  
             else:
-                Counters[str(k)].totalcount = pinCounterValueFile 
+                Counters[str(k)].totalcount = pinCounterValueFile
+                myHttpPost(str(k)) 
                 my_logprint("GPIO " + str(k) + " type(" + \
                             Counters[str(k)].counterType + \
                             ") Started with file value : " + \
@@ -252,33 +289,7 @@ for k in Counters.keys():
 #*********  START UP END ********************************     
 
     
-def writeCounterFile(filepath,counterAmt):
-    d = datetime.datetime.now()
-    f = open(filepath, 'w')
-    f.write(str(counterAmt) + " " + str(d.year) + ","+ str(d.month) + "," + str(d.day) + "," + \
-            str(d.hour) + "," + str(d.minute)+ "," + str(d.second) )
-    
-    
 
-def myHttpPost(channel):
-    myChannelCounter = Counters[channel]
-    values = dict(machineID=myChannelCounter.machineName,\
-                   counterType=myChannelCounter.counterType,\
-                    totalCount=str(myChannelCounter.totalcount))
-    data = httpPostReq(values,COUNTERPOST_URL)
-    my_logprint(data)
-    
-def my_callback(channel):
-    myCallBackCount = Counters[str(channel)]
-    myCallBackCount.add_tick(1)
-    my_logprint("Edge detected on " + str(channel))
-    fname = '/home/pi/projects/gpioCounter/data/' + str(channel) + ".dat"
-    if BOXMODE == "ONLINE":
-        myHttpPost(str(channel))
-        if onlineMode == False:    
-            writeCounterFile(fname,myCallBackCount.totalcount)
-    else:
-        writeCounterFile(fname,myCallBackCount.totalcount)
 
 
     
@@ -287,12 +298,13 @@ def my_callback(channel):
     
 for k1 in Counters.keys():
     my_logprint("current key " + str(k1))
-    GPIO.add_event_detect(int(k1), GPIO.FALLING, callback=my_callback,\
-                           bouncetime=300)
+    #GPIO.add_event_detect(int(k1), GPIO.FALLING, callback=my_callback,\
+    #                       bouncetime=100)
 
 
 
 try:
+    RPIO.wait_for_interrupts(threaded=True)
     
     
     
