@@ -20,14 +20,13 @@ class counterObj:
         
     def add_tick(self, tick):
         self.totalcount = self.totalcount + 1
+        print "total count = " + str(self.totalcount)
         self.publish = True
-        
         
 Counters = {}
 ConfigVals = {}
 onlineMode = True
-#TODO : add wait for network to be up
-time.sleep(int(180))  
+
 
 print "Hi, Starting .... you reading this call 480-249-1942"
 print "Parameters in File: "
@@ -170,46 +169,27 @@ def writeCounterFile(filepath,counterAmt):
 def my_callback(gpio_id, val):
     myCallBackCount = Counters[str(gpio_id)]
     myCallBackCount.add_tick(1)
-    my_logprint("Edge detected on " + str(gpio_id) + " Total Amt : " + str(myCallBackCount.totalcount))
-    
-   
+    my_logprint("Edge detected on " + str(gpio_id))
+    fname = '/media/USBHDD/projects/gpioCounter/data/' + str(gpio_id) + ".dat"
+    if BOXMODE == "ONLINE":
+        myHttpPost(str(gpio_id))
+        if onlineMode == False:    
+            writeCounterFile(fname,myCallBackCount.totalcount)
+    else:
+        writeCounterFile(fname,myCallBackCount.totalcount)
         
-def publish_counters():
-    for k in Counters.keys():
-        myCounter = Counters[str(k)]
-        if myCounter.publish == True:
-            my_logprint("Found Publish for Pin " + k)
-            fname = '/media/USBHDD/projects/gpioCounter/data/' + str(k) + ".dat"
-            if BOXMODE == "ONLINE":
-                myHttpPost(str(k))
-                if onlineMode == False:
-                    my_logprint("App is now on offline writing to file for pin " + k)
-                    writeCounterFile(fname,myCounter.totalcount)
-                    myCounter.publish = False
-                else:
-                    myCounter.publish = False
-                    my_logprint("Publish Success for Pin " + k)
-                       
-            else:
-                writeCounterFile(fname,myCounter.totalcount)
-                myCounter.publish = False
-                my_logprint("Written to File for Pin " + k)
         
-     
-            
         
 
 
 for k in Counters.keys():
     #GPIO.setup(int(k), GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    RPIO.add_interrupt_callback(int(k), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
-                                 threaded_callback=True,debounce_timeout_ms=100)
+    RPIO.add_interrupt_callback(int(k), my_callback, pull_up_down=RPIO.PUD_UP,\
+                                 threaded_callback=True,debounce_timeout_ms=10)
     #RPIO.add_interrupt_callback(int(k), my_callback, pull_up_down=RPIO.PUD_UP,\
     #                             threaded_callback=True)
     #RPIO.add_interrupt_callback(int(k), my_callback, pull_up_down=RPIO.PUD_OFF,\
     #                             threaded_callback=True,debounce_timeout_ms=50)
-   #     tempWebDate = datetime.datetime(1982,8,5,0,0,0)
-   
     
     pinCounterValueFile = 0
     pinCounterTSFile = datetime.datetime(1982,8,5,0,0,0)
@@ -249,21 +229,12 @@ for k in Counters.keys():
                 for i in myDataObj:
                     tempWebDate = i['max_in_date']
                     pinCounterValueWeb = int(i['max_in_count'])
-                    if tempWebDate is None:
-                        tempWebDate = '1982-08-05T12:35:45'
-                    if pinCounterValueWeb is None:
-                        pinCounterValueWeb = 0
-                                    
                 my_logprint("max_in_date:" + str(tempWebDate))
                 my_logprint("max_in_count:" + str(pinCounterValueWeb))     
             else:
                 for i in myDataObj:
                     tempWebDate = i['max_out_date']
                     pinCounterValueWeb = int(i['max_out_count'])
-                    if tempWebDate is None:
-                        tempWebDate = '1982-08-05T12:35:45'
-                    if pinCounterValueWeb is None:
-                        pinCounterValueWeb = 0
                 my_logprint("max_out_date:" + str(tempWebDate))
                 my_logprint("max_out_count:" + str(pinCounterValueWeb))     
             tempWebDatelist =  tempWebDate.split('T')
@@ -338,17 +309,16 @@ try:
     
     
     while(1):
-        time.sleep(int(SLEEP_SECONDS))
-        publish_counters() 
-        #if BOXMODE == 'ONLINE':
-        #    hbValues = dict(boxId=BOXID)
-        #    onli = checkIfOnline(hbValues,HEART_BEAT_URL)
-        #    if onli == False:
-        #        my_logprint("No Data from HeartBeat .. going offline")
-        #        onlineMode = False
-        #    elif onli == True:
-        #        my_logprint("HeartBeat Found .. going onLine")
-        #        onlineMode = True
+        time.sleep(int(SLEEP_SECONDS)) 
+        if BOXMODE == 'ONLINE':
+            hbValues = dict(boxId=BOXID)
+            onli = checkIfOnline(hbValues,HEART_BEAT_URL)
+            if onli == False:
+                my_logprint("No Data from HeartBeat .. going offline")
+                onlineMode = False
+            elif onli == True:
+                my_logprint("HeartBeat Found .. going onLine")
+                onlineMode = True
                 
             
             

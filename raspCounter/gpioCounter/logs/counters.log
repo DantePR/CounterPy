@@ -1,0 +1,3038 @@
+Hi, Starting .... you reading this call 480-249-1942
+Parameters in File: 
+ 
+['HEART_BEAT_URL', 'http://146.148.86.57:8080/sendHearBeat']
+['BOXMODE', 'ONLINE']
+['BOXDEBUG', 'True']
+['BOXID', '54d7046d85ef32ec19e41987']
+['COUNTERVAL_URL', 'http://146.148.86.57:8080/counterForMachine']
+['COUNTERPOST_URL', 'http://146.148.86.57:8080/pushCounterData']
+['SLEEP_SECONDS', '60']
+gpio_pin:23
+type:IN
+machine:549f9e60e4bd6267623b45ce
+gpio_pin:24
+type:OUT
+machine:549f9e60e4bd6267623b45ce
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+httpGetRequest http://146.148.86.57:8080/counterForMachine
+[
+  {
+    "_id": "549f9e60e4bd6267623b45ce",
+    "mac_name": "AlphaBox",
+    "mac_desc": "Indios vienen",
+    "max_in_date": "2015-02-10T05:02:31.340Z",
+    "max_in_count": 21,
+    "max_in_createdBy": "SYSYEM",
+    "max_out_date": "2015-02-04T19:36:20.965Z",
+    "max_out_count": 5,
+    "max_out_createdBy": "r@r.com"
+  }
+]
+MyData Fetched:323
+max_out_date:2015-02-04T19:36:20.965Z
+max_out_count:5
+2015
+02
+04
+19
+36
+20.965Z
+GPIO 24 type(OUT) Started with web value : 5
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+httpGetRequest http://146.148.86.57:8080/counterForMachine
+[
+  {
+    "_id": "549f9e60e4bd6267623b45ce",
+    "mac_name": "AlphaBox",
+    "mac_desc": "Indios vienen",
+    "max_in_date": "2015-02-10T05:02:31.340Z",
+    "max_in_count": 21,
+    "max_in_createdBy": "SYSYEM",
+    "max_out_date": "2015-02-04T19:36:20.965Z",
+    "max_out_count": 5,
+    "max_out_createdBy": "r@r.com"
+  }
+]
+MyData Fetched:323
+File exists 23.dat
+pinCounterValueFile: 21
+pinCounterTSFile: 2015,2,10,4,46,49
+max_in_date:2015-02-10T05:02:31.340Z
+max_in_count:21
+2015
+02
+10
+05
+02
+31.340Z
+GPIO 23 type(IN) Started with web value : 21
+current key 24
+current key 23
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 22
+Edge detected on 23
+{'totalCount': '22', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 23
+Edge detected on 23
+{'totalCount': '23', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 24
+Edge detected on 23
+{'totalCount': '24', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 25
+Edge detected on 23
+{'totalCount': '25', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 26
+Edge detected on 23
+{'totalCount': '26', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 27
+Edge detected on 23
+{'totalCount': '27', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+total count = 28
+Edge detected on 23
+{'totalCount': '28', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{'boxId': '54d7046d8Hi, Starting .... you reading this call 480-249-1942
+Parameters in File: 
+ 
+['HEART_BEAT_URL', 'http://146.148.86.57:8080/sendHearBeat']
+['BOXMODE', 'ONLINE']
+['BOXDEBUG', 'True']
+['BOXID', '54d7046d85ef32ec19e41987']
+['COUNTERVAL_URL', 'http://146.148.86.57:8080/counterForMachine']
+['COUNTERPOST_URL', 'http://146.148.86.57:8080/pushCounterData']
+['SLEEP_SECONDS', '60']
+gpio_pin:23
+type:IN
+machine:549f9e60e4bd6267623b45ce
+gpio_pin:24
+type:OUT
+machine:549f9e60e4bd6267623b45ce
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+httpGetRequest http://146.148.86.57:8080/counterForMachine
+[
+  {
+    "_id": "549f9e60e4bd6267623b45ce",
+    "mac_name": "AlphaBox",
+    "mac_desc": "Indios vienen",
+    "max_in_date": "2015-02-10T17:37:39.780Z",
+    "max_in_count": 29,
+    "max_in_createdBy": "SYSYEM",
+    "max_out_date": "2015-02-04T19:36:20.965Z",
+    "max_out_count": 5,
+    "max_out_createdBy": "r@r.com"
+  }
+]
+MyData Fetched:323
+max_out_date:2015-02-04T19:36:20.965Z
+max_out_count:5
+2015
+02
+04
+19
+36
+20.965Z
+GPIO 24 type(OUT) Started with web value : 5
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+{'machine_id': '549f9e60e4bd6267623b45ce'}
+httpGetRequest http://146.148.86.57:8080/counterForMachine
+[
+  {
+    "_id": "549f9e60e4bd6267623b45ce",
+    "mac_name": "AlphaBox",
+    "mac_desc": "Indios vienen",
+    "max_in_date": "2015-02-10T17:37:39.780Z",
+    "max_in_count": 29,
+    "max_in_createdBy": "SYSYEM",
+    "max_out_date": "2015-02-04T19:36:20.965Z",
+    "max_out_count": 5,
+    "max_out_createdBy": "r@r.com"
+  }
+]
+MyData Fetched:323
+File exists 23.dat
+pinCounterValueFile: 21
+pinCounterTSFile: 2015,2,10,4,46,49
+max_in_date:2015-02-10T17:37:39.780Z
+max_in_count:29
+2015
+02
+10
+17
+37
+39.780Z
+GPIO 23 type(IN) Started with web value : 29
+current key 24
+current key 23
+total count = 30
+Edge detected on 23
+{'totalCount': '30', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 31
+Edge detected on 23
+{'totalCount': '31', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 32
+Edge detected on 23
+{'totalCount': '32', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 33
+Edge detected on 23
+{'totalCount': '33', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 34
+Edge detected on 23
+{'totalCount': '34', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 35
+Edge detected on 23
+{'totalCount': '35', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 36
+Edge detected on 23
+{'totalCount': '36', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 37
+Edge detected on 23
+{'totalCount': '37', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 38
+Edge detected on 23
+{'totalCount': '38', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 39
+Edge detected on 23
+{'totalCount': '39', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 40
+Edge detected on 23
+{'totalCount': '40', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 41
+Edge detected on 23
+{'totalCount': '41', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 42
+Edge detected on 23
+{'totalCount': '42', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 43
+Edge detected on 23
+{'totalCount': '43', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 44
+Edge detected on 23
+{'totalCount': '44', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 45
+Edge detected on 23
+{'totalCount': '45', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 46
+Edge detected on 23
+{'totalCount': '46', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 47
+Edge detected on 23
+{'totalCount': '47', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 48
+Edge detected on 23
+{'totalCount': '48', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 49
+Edge detected on 23
+{'totalCount': '49', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 50
+Edge detected on 23
+{'totalCount': '50', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 51
+Edge detected on 23
+{'totalCount': '51', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 52
+Edge detected on 23
+{'totalCount': '52', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 53
+Edge detected on 23
+{'totalCount': '53', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 54
+Edge detected on 23
+{'totalCount': '54', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 55
+Edge detected on 23
+{'totalCount': '55', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 56
+Edge detected on 23
+{'totalCount': '56', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 57
+Edge detected on 23
+{'totalCount': '57', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 58
+Edge detected on 23
+{'totalCount': '58', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 59
+Edge detected on 23
+{'totalCount': '59', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 60
+Edge detected on 23
+{'totalCount': '60', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 61
+Edge detected on 23
+{'totalCount': '61', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 62
+Edge detected on 23
+{'totalCount': '62', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 63
+Edge detected on 23
+{'totalCount': '63', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 64
+Edge detected on 23
+{'totalCount': '64', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 65
+Edge detected on 23
+{'totalCount': '65', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 66
+Edge detected on 23
+{'totalCount': '66', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 67
+Edge detected on 23
+{'totalCount': '67', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 68
+Edge detected on 23
+{'totalCount': '68', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 69
+Edge detected on 23
+{'totalCount': '69', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 70
+Edge detected on 23
+{'totalCount': '70', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 71
+Edge detected on 23
+{'totalCount': '71', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 72
+Edge detected on 23
+{'totalCount': '72', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 73
+Edge detected on 23
+{'totalCount': '73', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 74
+Edge detected on 23
+{'totalCount': '74', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 75
+Edge detected on 23
+{'totalCount': '75', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 76
+Edge detected on 23
+{'totalCount': '76', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 77
+Edge detected on 23
+{'totalCount': '77', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 78
+Edge detected on 23
+{'totalCount': '78', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 79
+Edge detected on 23
+{'totalCount': '79', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 80
+Edge detected on 23
+{'totalCount': '80', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 81
+Edge detected on 23
+{'totalCount': '81', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 82
+Edge detected on 23
+{'totalCount': '82', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 83
+Edge detected on 23
+{'totalCount': '83', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 84
+Edge detected on 23
+{'totalCount': '84', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 85
+Edge detected on 23
+{'totalCount': '85', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 86
+Edge detected on 23
+{'totalCount': '86', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 87
+Edge detected on 23
+{'totalCount': '87', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 88
+Edge detected on 23
+{'totalCount': '88', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 89
+Edge detected on 23
+{'totalCount': '89', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 90
+Edge detected on 23
+{'totalCount': '90', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 91
+Edge detected on 23
+{'totalCount': '91', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 92
+Edge detected on 23
+{'totalCount': '92', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 93
+Edge detected on 23
+{'totalCount': '93', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 94
+Edge detected on 23
+{'totalCount': '94', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 95
+Edge detected on 23
+{'totalCount': '95', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 96
+Edge detected on 23
+{'totalCount': '96', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 97
+Edge detected on 23
+{'totalCount': '97', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 98
+Edge detected on 23
+{'totalCount': '98', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 99
+Edge detected on 23
+{'totalCount': '99', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 100
+Edge detected on 23
+{'totalCount': '100', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 101
+Edge detected on 23
+{'totalCount': '101', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 102
+Edge detected on 23
+{'totalCount': '102', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 103
+Edge detected on 23
+{'totalCount': '103', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 104
+Edge detected on 23
+{'totalCount': '104', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 105
+Edge detected on 23
+{'totalCount': '105', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 106
+Edge detected on 23
+{'totalCount': '106', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 107
+Edge detected on 23
+{'totalCount': '107', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 108
+Edge detected on 23
+{'totalCount': '108', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 109
+Edge detected on 23
+{'totalCount': '109', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 110
+Edge detected on 23
+{'totalCount': '110', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 111
+Edge detected on 23
+{'totalCount': '111', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 112
+Edge detected on 23
+{'totalCount': '112', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 113
+Edge detected on 23
+{'totalCount': '113', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 114
+Edge detected on 23
+{'totalCount': '114', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 115
+Edge detected on 23
+{'totalCount': '115', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 116
+Edge detected on 23
+{'totalCount': '116', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 117
+Edge detected on 23
+{'totalCount': '117', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 118
+Edge detected on 23
+{'totalCount': '118', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 119
+Edge detected on 23
+{'totalCount': '119', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 120
+Edge detected on 23
+{'totalCount': '120', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 121
+Edge detected on 23
+{'totalCount': '121', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 122
+Edge detected on 23
+{'totalCount': '122', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 123
+Edge detected on 23
+{'totalCount': '123', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 124
+Edge detected on 23
+{'totalCount': '124', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 125
+Edge detected on 23
+{'totalCount': '125', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 126
+Edge detected on 23
+{'totalCount': '126', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 127
+Edge detected on 23
+{'totalCount': '127', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 128
+Edge detected on 23
+{'totalCount': '128', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 129
+Edge detected on 23
+{'totalCount': '129', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 130
+Edge detected on 23
+{'totalCount': '130', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 131
+Edge detected on 23
+{'totalCount': '131', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 132
+Edge detected on 23
+{'totalCount': '132', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 133
+Edge detected on 23
+{'totalCount': '133', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 134
+Edge detected on 23
+{'totalCount': '134', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 135
+Edge detected on 23
+{'totalCount': '135', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 136
+Edge detected on 23
+{'totalCount': '136', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 137
+Edge detected on 23
+{'totalCount': '137', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 138
+Edge detected on 23
+{'totalCount': '138', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 139
+Edge detected on 23
+{'totalCount': '139', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 140
+Edge detected on 23
+{'totalCount': '140', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 141
+Edge detected on 23
+{'totalCount': '141', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 142
+Edge detected on 23
+{'totalCount': '142', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 143
+Edge detected on 23
+{'totalCount': '143', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 144
+Edge detected on 23
+{'totalCount': '144', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 145
+Edge detected on 23
+{'totalCount': '145', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 146
+Edge detected on 23
+{'totalCount': '146', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 147
+Edge detected on 23
+{'totalCount': '147', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 148
+Edge detected on 23
+{'totalCount': '148', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 149
+Edge detected on 23
+{'totalCount': '149', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 150
+Edge detected on 23
+{'totalCount': '150', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 151
+Edge detected on 23
+{'totalCount': '151', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 152
+Edge detected on 23
+{'totalCount': '152', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 153
+Edge detected on 23
+{'totalCount': '153', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 154
+Edge detected on 23
+{'totalCount': '154', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 155
+Edge detected on 23
+{'totalCount': '155', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 156
+Edge detected on 23
+{'totalCount': '156', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 157
+Edge detected on 23
+{'totalCount': '157', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 158
+Edge detected on 23
+{'totalCount': '158', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 159
+Edge detected on 23
+{'totalCount': '159', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 160
+Edge detected on 23
+{'totalCount': '160', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 161
+Edge detected on 23
+{'totalCount': '161', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 162
+Edge detected on 23
+{'totalCount': '162', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 163
+Edge detected on 23
+{'totalCount': '163', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 164
+Edge detected on 23
+{'totalCount': '164', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 165
+Edge detected on 23
+{'totalCount': '165', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 166
+Edge detected on 23
+{'totalCount': '166', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 167
+Edge detected on 23
+{'totalCount': '167', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 168
+Edge detected on 23
+{'totalCount': '168', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{'boxId': '54d7046d85ef32ec19e41987'}
+HeartBeat Found .. going onLine
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 169
+Edge detected on 23
+{'totalCount': '169', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 170
+Edge detected on 23
+{'totalCount': '170', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 171
+Edge detected on 23
+{'totalCount': '171', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 172
+Edge detected on 23
+{'totalCount': '172', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 173
+Edge detected on 23
+{'totalCount': '173', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 174
+Edge detected on 23
+{'totalCount': '174', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 175
+Edge detected on 23
+{'totalCount': '175', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 176
+Edge detected on 23
+{'totalCount': '176', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 177
+Edge detected on 23
+{'totalCount': '177', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 178
+Edge detected on 23
+{'totalCount': '178', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 179
+Edge detected on 23
+{'totalCount': '179', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 180
+Edge detected on 23
+{'totalCount': '180', 'counterType': 'IN', 'machineID': '549f9e60e4bd6267623b45ce'}
+httpPostRequest http://146.148.86.57:8080/pushCounterData
+{
+  "status": "success"
+}
+{
+  "status": "success"
+}
+total count = 181
+Ed
