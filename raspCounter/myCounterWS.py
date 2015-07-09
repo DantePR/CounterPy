@@ -80,7 +80,34 @@ def on_gpio_online_response(args):
     myOfflineCount.publish = False
     myOfflineCount.totalcount = args['totalcount'] 
     
-
+def httpGetReq(values,inboundURL):
+    my_logprint(values)
+    params = urllib.urlencode(values)
+    my_logprint("httpGetRequest " + inboundURL)
+    
+    try:
+        response = urllib2.urlopen(inboundURL + '?' + params)
+        #onlineMode = True
+    except urllib2.HTTPError as e:
+        my_logprint(str(e.code) + " " + e.read())
+        #onlineMode = False
+        data ={}
+    except urllib2.URLError as e:
+        my_logprint("URLError")
+        #onlineMode = False
+        data ={}
+    else:
+        data = response.read()
+        response.close()
+        my_logprint(data)
+        
+    return data 
+    
+def pullCounterValFromCloud(in_counterType,machineID):
+    values = dict(machine_id=machineID)
+    my_logprint(values)
+    myData = httpGetReq(values,COUNTERVAL_URL)
+    return myData
     
 
 def on_auth_response(args):
@@ -92,9 +119,17 @@ def on_auth_response(args):
         Machines = args['machines']
         #need to get total count for each pin from web
         for m in Machines:
-            tempCounter = counterObj(str(m['gpioPin']),m['counterType'],m['machineID'],0,0)
-            Counters[str(m['gpioPin'])] = tempCounter
-            RPIO.add_interrupt_callback(int(m['gpioPin']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+            myData = pullCounterValFromCloud('IN',m['machine_id'])
+            pinCounterValueWeb_in = int(myData['max_in_count'])
+            pinCounterValueWeb_out = int(myData['max_out_count'])
+            
+            tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
+            tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
+            Counters[str(m['gpio_id_in'])] = tempCounter_in
+            Counters[str(m['gpio_id_out'])] = tempCounter_out
+            RPIO.add_interrupt_callback(int(m['gpio_id_in']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                                 threaded_callback=True,debounce_timeout_ms=100)
+            RPIO.add_interrupt_callback(int(m['gpio_id_out']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
                                  threaded_callback=True,debounce_timeout_ms=100)
 
     else:
