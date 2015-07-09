@@ -53,7 +53,7 @@ BOXID = ConfigVals["BOXID"]
 COUNTERVAL_URL = ConfigVals["COUNTERVAL_URL"]
 COUNTERPOST_URL= ConfigVals["COUNTERPOST_URL"]
 SLEEP_SECONDS= ConfigVals["SLEEP_SECONDS"]
-
+Counters={}
 
 
 
@@ -113,16 +113,23 @@ def pullCounterValFromCloud(in_counterType,machineID):
 def on_auth_response(args):
     my_logprint("Handshake resp")
     my_logprint(args)
-    Counters={}
+    pinCounterValueWeb_in = 0
+    pinCounterValueWeb_out = 0
     if args['isvalid']:
         my_logprint('valid')
         Machines = args['machines']
         #need to get total count for each pin from web
         for m in Machines:
             myData = pullCounterValFromCloud('IN',m['machine_id'])
-            pinCounterValueWeb_in = int(myData['max_in_count'])
-            pinCounterValueWeb_out = int(myData['max_out_count'])
+            myDataObj = json.loads(myData)
+            for i in myDataObj:
+                pinCounterValueWeb_in = int(i['max_in_count'])
+                pinCounterValueWeb_out = int(i['max_out_count'])
             
+            my_logprint('pinCounterValueWeb_in:' + str(pinCounterValueWeb_in))
+            my_logprint('pinCounterValueWeb_out:' + str(pinCounterValueWeb_out))
+            my_logprint('gpio_id_in:' + str(m['gpio_id_in']))
+            my_logprint('gpio_id_out:' + str(m['gpio_id_out']))
             tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
             tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
             Counters[str(m['gpio_id_in'])] = tempCounter_in
@@ -139,9 +146,11 @@ def on_auth_response(args):
 
     
 def my_callback(gpio_id, val):
+    my_logprint("Edge detected on " + str(gpio_id))
+    my_logprint(Counters)
     myCallBackCount = Counters[str(gpio_id)]
     myCallBackCount.add_tick(1)
-    my_logprint("Edge detected on " + str(gpio_id) + " Total Amt : " + str(myCallBackCount.totalcount))
+    my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
     
    
         
@@ -176,7 +185,7 @@ try:
     my_logprint("Listenin ... " ) 
     
     while(1):
-        #time.sleep(int(SLEEP_SECONDS))
+        time.sleep(int(SLEEP_SECONDS))
         publish_counters()
         socketIO.wait(seconds=1)
        
