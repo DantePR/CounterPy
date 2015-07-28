@@ -64,22 +64,19 @@ def my_logprint(message):
         sys.stdout.flush()
 
 def on_get_box_status(args):
-    my_logprint("HeartBeaT for " + args['boxid']);
+    my_logprint("HeartBeaT for " + args['boxid'])
     socketIO.emit('on_get_box_status', {"boxid":args['boxid']})
     
 def on_gpio_offline_response(args):
-    my_logprint("GPIO  OFFLINE" + args['gpio_id']);
-    myOfflineCount = Counters[str(args['gpio_id'])]
+    my_logprint("GPIO  OFFLINE" + str(args['gpio_in']) + " " + str(args['gpio_out']));
+    myOfflineCount = Counters[str(args['gpio_in'])]
     myOfflineCount.offline = True
+    myOfflineCount_out = Counters[str(args['gpio_out'])]
+    myOfflineCount_out.offline = True
     
     
-def on_gpio_online_response(args):
-    my_logprint("GPIO  ONLINE" + args['gpio_id']);
-    myOfflineCount = Counters[str(args['gpio_id'])]
-    myOfflineCount.offline = False
-    myOfflineCount.publish = False
-    myOfflineCount.totalcount = args['totalcount'] 
     
+
 def httpGetReq(values,inboundURL):
     my_logprint(values)
     params = urllib.urlencode(values)
@@ -108,46 +105,123 @@ def pullCounterValFromCloud(in_counterType,machineID):
     my_logprint(values)
     myData = httpGetReq(values,COUNTERVAL_URL)
     return myData
-    
 
+
+def on_gpio_online_response(args):
+    #IN SECTION
+    pinCounterValueWeb_in = 0
+    pinCounterValueWeb_out = 0
+    myGpio_in = Counters[str(args['gpio_in'])]
+    myGpio_in.offline = False
+    myGpio_in.publish = False
+    myData = pullCounterValFromCloud('IN',args['machine_id'])
+    myDataObj = json.loads(myData)
+    for i in myDataObj:
+        pinCounterValueWeb_in = int(i['max_in_count'])
+        pinCounterValueWeb_out = int(i['max_out_count'])
+                 
+    myGpio_in.totalcount = pinCounterValueWeb_in   
+    Counters[str(args['gpio_in'])] = myGpio_in
+    #OUT SECTION
+    myGpio_out = Counters[str(args['gpio_out'])]
+    myGpio_out.offline = False
+    myGpio_out.publish = False
+    myGpio_out.totalcount = pinCounterValueWeb_out  
+    Counters[str(args['gpio_out'])] = myGpio_out
+    
+    
 def on_auth_response(args):
     my_logprint("Handshake resp")
     my_logprint(args)
     pinCounterValueWeb_in = 0
     pinCounterValueWeb_out = 0
-    if args['isvalid']:
+    if args['isvalid'] == 'true':
         my_logprint('valid')
         Machines = args['machines']
         #need to get total count for each pin from web
         for m in Machines:
-            myData = pullCounterValFromCloud('IN',m['machine_id'])
-            myDataObj = json.loads(myData)
-            for i in myDataObj:
-                pinCounterValueWeb_in = int(i['max_in_count'])
-                pinCounterValueWeb_out = int(i['max_out_count'])
             
-            my_logprint('pinCounterValueWeb_in:' + str(pinCounterValueWeb_in))
-            my_logprint('pinCounterValueWeb_out:' + str(pinCounterValueWeb_out))
-            my_logprint('gpio_id_in:' + str(m['gpio_id_in']))
-            my_logprint('gpio_id_out:' + str(m['gpio_id_out']))
-            tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
-            tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
-            Counters[str(m['gpio_id_in'])] = tempCounter_in
-            Counters[str(m['gpio_id_out'])] = tempCounter_out
-            RPIO.add_interrupt_callback(int(m['gpio_id_in']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+            if m['gpio_active'] == True:
+                myData = pullCounterValFromCloud('IN',m['machine_id'])
+                myDataObj = json.loads(myData)
+                for i in myDataObj:
+                    pinCounterValueWeb_in = int(i['max_in_count'])
+                    pinCounterValueWeb_out = int(i['max_out_count'])
+            
+                my_logprint('pinCounterValueWeb_in:' + str(pinCounterValueWeb_in))
+                my_logprint('pinCounterValueWeb_out:' + str(pinCounterValueWeb_out))
+                my_logprint('gpio_id_in:' + str(m['gpio_id_in']))
+                my_logprint('gpio_id_out:' + str(m['gpio_id_out']))
+                tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
+                tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
+                Counters[str(m['gpio_id_in'])] = tempCounter_in
+                Counters[str(m['gpio_id_out'])] = tempCounter_out
+                RPIO.add_interrupt_callback(int(m['gpio_id_in']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
                                  threaded_callback=True,debounce_timeout_ms=100)
-            RPIO.add_interrupt_callback(int(m['gpio_id_out']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                RPIO.add_interrupt_callback(int(m['gpio_id_out']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
                                  threaded_callback=True,debounce_timeout_ms=100)
 
     else:
         socketIO.emit('auth_nogo')
         #TODO: EXIT  
 
-
+def on_refresh_response(args):
+    my_logprint("refresh resp")
+    my_logprint(args)
+    pinCounterValueWeb_in = 0
+    pinCounterValueWeb_out = 0
+    if args['isvalid'] == 'true':
+        my_logprint('valid')
+        Machines = args['machines']
+        #need to get total count for each pin from web
+        for m in Machines:
+            
+            if m['gpio_active'] == True:
+                myData = pullCounterValFromCloud('IN',m['machine_id'])
+                myDataObj = json.loads(myData)
+                for i in myDataObj:
+                    pinCounterValueWeb_in = int(i['max_in_count'])
+                    pinCounterValueWeb_out = int(i['max_out_count'])
+            
+                my_logprint('pinCounterValueWeb_in:' + str(pinCounterValueWeb_in))
+                my_logprint('pinCounterValueWeb_out:' + str(pinCounterValueWeb_out))
+                my_logprint('gpio_id_in:' + str(m['gpio_id_in']))
+                my_logprint('gpio_id_out:' + str(m['gpio_id_out']))
+                
+                
+                if str(m['gpio_id_in']) in Counters:
+                    tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
+                    tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
+                    Counters[str(m['gpio_id_in'])] = tempCounter_in
+                    Counters[str(m['gpio_id_out'])] = tempCounter_out
+                    
+                else:
+                    tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
+                    tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
+                    Counters[str(m['gpio_id_in'])] = tempCounter_in
+                    Counters[str(m['gpio_id_out'])] = tempCounter_out
+                    RPIO.add_interrupt_callback(int(m['gpio_id_in']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                                                threaded_callback=True,debounce_timeout_ms=100)
+                    RPIO.add_interrupt_callback(int(m['gpio_id_out']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                                                threaded_callback=True,debounce_timeout_ms=100)
+                    
+            else:
+                if str(m['gpio_id_in']) in Counters:
+                    my_logprint('removing from array')
+                    RPIO.del_interrupt_callback(int(m['gpio_id_in']))
+                    RPIO.del_interrupt_callback(int(m['gpio_id_out']))
+                    del Counters[str(m['gpio_id_in'])]
+                    del Counters[str(m['gpio_id_out'])]
+                    
+                
+                
+    else:
+        socketIO.emit('auth_nogo')
+        #TODO: EXIT  
     
 def my_callback(gpio_id, val):
     my_logprint("Edge detected on " + str(gpio_id))
-    my_logprint(Counters)
+    #my_logprint(Counters)
     myCallBackCount = Counters[str(gpio_id)]
     myCallBackCount.add_tick(1)
     my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
@@ -171,8 +245,9 @@ def publish_counters():
 
 
 try:
-    socketIO = SocketIO(HEART_BEAT_URL,3000 ,LoggingNamespace, params={"boxid":BOXID,"type":"PI"}) 
+    socketIO = SocketIO(HEART_BEAT_URL,verify='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.pem', params={"boxid":BOXID,"type":"PI"}) 
     socketIO.on('on_auth', on_auth_response)
+    socketIO.on('on_refresh', on_refresh_response)
     socketIO.on('on_gpio_offline', on_gpio_offline_response)
     socketIO.on('on_gpio_online', on_gpio_online_response)
     socketIO.on('on_get_box_status', on_get_box_status)
