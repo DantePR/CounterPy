@@ -53,6 +53,8 @@ BOXID = ConfigVals["BOXID"]
 COUNTERVAL_URL = ConfigVals["COUNTERVAL_URL"]
 COUNTERPOST_URL= ConfigVals["COUNTERPOST_URL"]
 SLEEP_SECONDS= ConfigVals["SLEEP_SECONDS"]
+WEB_USER=ConfigVals["WEB_USER"]
+WEB_PASS=ConfigVals["WEB_PASS"]
 Counters={}
 
 
@@ -101,7 +103,7 @@ def httpGetReq(values,inboundURL):
     return data 
     
 def pullCounterValFromCloud(in_counterType,machineID):
-    values = dict(machine_id=machineID)
+    values = dict(machine_id=machineID,email=WEB_USER,password=WEB_PASS)
     my_logprint(values)
     myData = httpGetReq(values,COUNTERVAL_URL)
     return myData
@@ -226,15 +228,47 @@ def my_callback(gpio_id, val):
     myCallBackCount.add_tick(1)
     my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
     
-   
+def httpPostReq(values,inboundURL):
+    my_logprint(values)
+    params = urllib.urlencode(values)
+    my_logprint("httpPostRequest " + inboundURL)
+    req = urllib2.Request(inboundURL, params)
+    try:
+        response = urllib2.urlopen(req)
+        onlineMode = True
+    except urllib2.HTTPError as e:
+        my_logprint(str(e.code) + " " + e.read())
+        #onlineMode = False
+        data ={} 
+    except urllib2.URLError as e:
+        my_logprint("URLError")
+        #onlineMode = False
+        data ={} 
+    else:
+        data = response.read()
+        response.close()
+        my_logprint(data)
+           
+    return data    
+
+def myHttpPost(channel):
+    myChannelCounter = Counters[channel]
+    values = dict(machineID=myChannelCounter.machineID,\
+                   counterType=myChannelCounter.counterType,\
+                   email=WEB_USER,password=WEB_PASS,\
+                    totalCount=str(myChannelCounter.totalcount))
+    data = httpPostReq(values,COUNTERPOST_URL)
+    my_logprint(data)   
         
 def publish_counters():
     for k in Counters.keys():
         myCounter = Counters[str(k)]
         if myCounter.publish == True and myCounter.offline == False:
             my_logprint("Found Publish for Pin " + k)
+            myHttpPost(str(k))
             socketIO.emit('publish_counter', {"machineID":myCounter.machineID,\
                         "gpio_id":myCounter.gpioPin,"totalcount":myCounter.totalcount,"counter_type":myCounter.counterType})
+            
             myCounter.publish = False
             my_logprint("Publish Success for Pin " + k)
                        
