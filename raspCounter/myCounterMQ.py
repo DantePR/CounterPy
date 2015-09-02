@@ -71,10 +71,15 @@ def my_logprint(message):
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
     client.subscribe(BOXID)
+    
+def on_hbt_message(data,client):
+    client.publish('549fRAMR4bd_BOXES', '{"msgType":"HBT_RESP","boxid":"'+ BOXID+ '","status":"Active"}')
+    
 
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
+    print("on message :" + msg.topic+" "+str(msg.payload))
+    on_hbt_message(str(msg.payload),client)
 
    
 
@@ -177,14 +182,14 @@ def myHttpPost(channel):
     data = httpPostReq(values,COUNTERPOST_URL)
     my_logprint(data)   
         
-def publish_counters():
+def publish_counters(client):
     
     included_extenstions = ['counter'];
     file_names = [fn for fn in os.listdir(relevant_path) if any([fn.endswith(ext) for ext in included_extenstions])];
     for f in file_names:
         myIndex=f.index('.counter')
-        channel_id=f[0:myIndex]
-        print 'myChannel:' + str(channel_id)
+        #channel_id=f[0:myIndex]
+        #print 'myChannel:' + str(channel_id)
         output = subprocess.check_output("cat "+relevant_path+f, shell=True)
         myOutObj = json.loads(output)
         gpio=myOutObj['gpio_id']
@@ -192,6 +197,7 @@ def publish_counters():
         myCounter = Counters[gpio]
         if myCounter.totalcount != numCount:
             client.publish("publish_counter",output)
+            #client.publish('549fRAMR4bd_PUBLISH', output)
             myCounter.totalcount = numCount
             Counters[gpio] = myCounter
             my_logprint("Publish Success for Pin " + str(gpio))
@@ -215,7 +221,7 @@ try:
     
     while(1):
         time.sleep(int(SLEEP_SECONDS))
-        publish_counters()
+        publish_counters(client)
 
        
           
