@@ -57,6 +57,8 @@ MQTT_HOST=ConfigVals["MQCONN"]
 GETALL_URL=ConfigVals["GETALL_URL"]
 WEB_USER=ConfigVals["WEB_USER"]
 WEB_PASS=ConfigVals["WEB_PASS"]
+MQTT_USER=ConfigVals["MQTT_USER"]
+MQTT_PASS=ConfigVals["MQTT_PASS"]
 relevant_path = "/var/tmp/"
 Counters={}
 
@@ -69,17 +71,34 @@ def my_logprint(message):
         sys.stdout.flush()
     
 def on_connect(client, userdata, flags, rc):
-    print("Connected with result code "+str(rc))
+    my_logprint("Connected with result code "+str(rc))
     client.subscribe(BOXID)
     
 def on_hbt_message(data,client):
     client.publish('549fRAMR4bd_BOXES', '{"msgType":"HBT_RESP","boxid":"'+ BOXID+ '","status":"Active"}')
     
-
+def on_update_message(data,client):
+    my_logprint("got payload :")
+    f = open(relevant_path + data['gpio_in'] + ".web", 'w')
+    f.write(data['counter_in'])
+    f.flush()
+    f.close()
+    s = open(relevant_path + data['gpio_out'] + ".web", 'w')
+    s.write(data['counter_out'])
+    s.flush()
+    s.close()
+    
+    
 # The callback for when a PUBLISH message is received from the server.
 def on_message(client, userdata, msg):
-    print("on message :" + msg.topic+" "+str(msg.payload))
-    on_hbt_message(str(msg.payload),client)
+    
+    my_logprint("on message :" + msg.topic+" "+str(msg.payload))
+    myDataObj = json.loads(str(msg.payload))
+    if myDataObj['msgType'] == "UPDATE_COUNTER":
+        on_update_message(myDataObj,client)
+    
+    if myDataObj['msgType'] == "HBT":    
+        on_hbt_message(myDataObj,client)
 
    
 
@@ -196,8 +215,8 @@ def publish_counters(client):
         numCount=int(myOutObj['totalcount'])
         myCounter = Counters[gpio]
         if myCounter.totalcount != numCount:
-            client.publish("publish_counter",output)
-            #client.publish('549fRAMR4bd_PUBLISH', output)
+            #client.publish("publish_counter",output)
+            client.publish('549fRAMR4bd_PUBLISH', output)
             myCounter.totalcount = numCount
             Counters[gpio] = myCounter
             my_logprint("Publish Success for Pin " + str(gpio))
@@ -212,6 +231,12 @@ try:
     myDataObj = json.loads(myLoadValues)
     on_auth_response(myDataObj)
     client = mqtt.Client(client_id=str(BOXID))
+    #client.tls_set(ca_certs='/usr/local/lib/python2.7/dist-packages/requests/gd_bundle-g2-g1.crt',\
+    #               certfile='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.pem',\
+    #                keyfile='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.key',ciphers=None)
+    client.tls_set(ca_certs, certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,\
+    tls_version=ssl.PROTOCOL_TLSv1, ciphers=None)
+    client.username_pw_set(MQTT_USER, password=MQTT_PASS)
     client.on_connect = on_connect
     client.on_message = on_message
     client.connect(MQTT_HOST, 1883, 60)

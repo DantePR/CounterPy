@@ -200,7 +200,7 @@ def publish_counters():
         if myCounter.publish == True:
             my_logprint("Found Publish for Pin " + k)
             f = open(relevant_path +str(k) + ".counter", 'w')
-            msg = '{"machineID":"'+ str(myCounter.machineID) + '","gpio_id":"' + str(myCounter.gpioPin)+ '","totalcount":"'+str(myCounter.totalcount)+'","counter_type":"'+str(myCounter.counterType)+'"}'
+            msg = '{"msgType":"COUNTER_UPDATE","machineID":"'+ str(myCounter.machineID) + '","gpio_id":"' + str(myCounter.gpioPin)+ '","totalcount":"'+str(myCounter.totalcount)+'","counter_type":"'+str(myCounter.counterType)+'"}'
             f.write(msg)
             f.flush()
             f.close()
