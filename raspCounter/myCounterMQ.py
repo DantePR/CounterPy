@@ -59,6 +59,8 @@ WEB_USER=ConfigVals["WEB_USER"]
 WEB_PASS=ConfigVals["WEB_PASS"]
 MQTT_USER=ConfigVals["MQTT_USER"]
 MQTT_PASS=ConfigVals["MQTT_PASS"]
+MQTT_IS_SECURE=ConfigVals["MQTT_IS_SECURE"]
+MQTT_PORT=ConfigVals["MQTT_PORT"]
 relevant_path = "/var/tmp/"
 Counters={}
 
@@ -103,24 +105,26 @@ def on_message(client, userdata, msg):
    
 
 def httpGetReq(values,inboundURL):
+    global onlineMode
     my_logprint(values)
     params = urllib.urlencode(values)
     my_logprint("httpGetRequest " + inboundURL)
     
     try:
         response = urllib2.urlopen(inboundURL + '?' + params)
-        #onlineMode = True
+        
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
-        #onlineMode = False
+        onlineMode = False
         data ={}
     except urllib2.URLError as e:
         my_logprint("URLError")
-        #onlineMode = False
+        onlineMode = False
         data ={}
     else:
         data = response.read()
         response.close()
+        onlineMode = True
         my_logprint(data)
         
     return data 
@@ -144,12 +148,6 @@ def on_auth_response(args):
         for m in Machines:
             
             if m['gpio_active'] == True:
-                myData = pullCounterValFromCloud('IN',m['machine_id'])
-                myDataObj = json.loads(myData)
-                for i in myDataObj:
-                    pinCounterValueWeb_in = int(i['max_in_count'])
-                    pinCounterValueWeb_out = int(i['max_out_count'])
-            
                 my_logprint('pinCounterValueWeb_in:' + str(pinCounterValueWeb_in))
                 my_logprint('pinCounterValueWeb_out:' + str(pinCounterValueWeb_out))
                 my_logprint('gpio_id_in:' + str(m['gpio_id_in']))
@@ -170,25 +168,27 @@ def my_callback(gpio_id, val):
     my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
     
 def httpPostReq(values,inboundURL):
+    global onlineMode
     my_logprint(values)
     params = urllib.urlencode(values)
     my_logprint("httpPostRequest " + inboundURL)
     req = urllib2.Request(inboundURL, params)
     try:
         response = urllib2.urlopen(req)
-        onlineMode = True
+        
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
-        #onlineMode = False
+        onlineMode = False
         data ={} 
     except urllib2.URLError as e:
         my_logprint("URLError")
-        #onlineMode = False
+        onlineMode = False
         data ={} 
     else:
         data = response.read()
         response.close()
         my_logprint(data)
+        onlineMode = True
            
     return data    
 
@@ -202,13 +202,11 @@ def myHttpPost(channel):
     my_logprint(data)   
         
 def publish_counters(client):
-    
+    global Counters
     included_extenstions = ['counter'];
     file_names = [fn for fn in os.listdir(relevant_path) if any([fn.endswith(ext) for ext in included_extenstions])];
     for f in file_names:
         myIndex=f.index('.counter')
-        #channel_id=f[0:myIndex]
-        #print 'myChannel:' + str(channel_id)
         output = subprocess.check_output("cat "+relevant_path+f, shell=True)
         myOutObj = json.loads(output)
         gpio=myOutObj['gpio_id']
@@ -228,25 +226,50 @@ def publish_counters(client):
 try:
     values = dict(boxid=BOXID,email=WEB_USER,password=WEB_PASS)
     myLoadValues=httpGetReq(values,GETALL_URL)
-    myDataObj = json.loads(myLoadValues)
+    myDataObj={}
+    if (myLoadValues):
+        print 'my values ' + myLoadValues
+        f = open("/media/USBHDD/projects/gpioCounter/config/countersMQ.config", 'w')
+        f.write(str(myLoadValues))
+        f.flush()
+        f.close()
+        myDataObj = json.loads(myLoadValues)
+        
+        
+    else:
+        with open("/media/USBHDD/projects/gpioCounter/config/countersMQ.config") as fc:
+            myDataObj = json.loads(fc.read())
+    
     on_auth_response(myDataObj)
     client = mqtt.Client(client_id=str(BOXID))
-    #client.tls_set(ca_certs='/usr/local/lib/python2.7/dist-packages/requests/gd_bundle-g2-g1.crt',\
-    #               certfile='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.pem',\
-    #                keyfile='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.key',ciphers=None)
-    client.tls_set(ca_certs, certfile=None, keyfile=None, cert_reqs=ssl.CERT_REQUIRED,\
-    tls_version=ssl.PROTOCOL_TLSv1, ciphers=None)
+    if MQTT_IS_SECURE == 'True':
+        client.tls_set(ca_certs='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.chained.crt',\
+                   certfile='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.pem',\
+                    keyfile='/usr/local/lib/python2.7/dist-packages/requests/iot.cointrak.io.key',ciphers=None)
+    
     client.username_pw_set(MQTT_USER, password=MQTT_PASS)
     client.on_connect = on_connect
     client.on_message = on_message
-    client.connect(MQTT_HOST, 1883, 60)
+    tryconnect = True
+    while(tryconnect):
+        try:
+            client.connect(MQTT_HOST, MQTT_PORT, 60)
+            tryconnect = False
+        except Exception as inst:
+            my_logprint("Failed to Connect will try again .. ")
+            time.sleep(int(SLEEP_SECONDS))
+            
+                
 
     client.loop_start()
     my_logprint("Listenin ... " ) 
     
     while(1):
-        time.sleep(int(SLEEP_SECONDS))
-        publish_counters(client)
+        try:
+            time.sleep(int(SLEEP_SECONDS))
+            publish_counters(client)
+        except Exception as inst:
+            my_logprint("Exception in main loop ")
 
        
           

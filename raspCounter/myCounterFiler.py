@@ -69,25 +69,27 @@ def my_logprint(message):
 
 
 def httpGetReq(values,inboundURL):
+    global onlineMode
     my_logprint(values)
     params = urllib.urlencode(values)
     my_logprint("httpGetRequest " + inboundURL)
     
     try:
         response = urllib2.urlopen(inboundURL + '?' + params)
-        #onlineMode = True
+        
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
-        #onlineMode = False
+        onlineMode = False
         data ={}
     except urllib2.URLError as e:
         my_logprint("URLError")
-        #onlineMode = False
+        onlineMode = False
         data ={}
     else:
         data = response.read()
         response.close()
         my_logprint(data)
+        onlineMode = True
         
     return data 
     
@@ -141,24 +143,26 @@ def my_callback(gpio_id, val):
     my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
     
 def httpPostReq(values,inboundURL):
+    global onlineMode
     my_logprint(values)
     params = urllib.urlencode(values)
     my_logprint("httpPostRequest " + inboundURL)
     req = urllib2.Request(inboundURL, params)
     try:
         response = urllib2.urlopen(req)
-        onlineMode = True
+        
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
-        #onlineMode = False
+        onlineMode = False
         data ={} 
     except urllib2.URLError as e:
         my_logprint("URLError")
-        #onlineMode = False
+        onlineMode = False
         data ={} 
     else:
         data = response.read()
         response.close()
+        onlineMode = True
         my_logprint(data)
            
     return data    
@@ -194,9 +198,29 @@ def check_updates():
     
     
 def publish_counters():
+    localMode = onlineMode
+    #my_logprint("onlineMode: " + str(onlineMode))
+    global Counters
     for k in Counters.keys():
         check_updates()
         myCounter = Counters[str(k)]
+        thisCounterValueWeb_in = 0
+        thisCounterValueWeb_out = 0
+        if localMode == False:
+            my_logprint("localMode if False")
+            myData = pullCounterValFromCloud('IN',myCounter.machineID)
+            if (myData):
+                myDataObj = json.loads(myData)
+                for i in myDataObj:
+                    thisCounterValueWeb_in = int(i['max_in_count'])
+                    thisCounterValueWeb_out = int(i['max_out_count'])
+            
+                
+            if myCounter.counterType == "IN":
+                myCounter.totalcount = myCounter.totalcount + thisCounterValueWeb_in
+            if myCounter.counterType == "OUT":
+                myCounter.totalcount = myCounter.totalcount + thisCounterValueWeb_out    
+                
         if myCounter.publish == True:
             my_logprint("Found Publish for Pin " + k)
             f = open(relevant_path +str(k) + ".counter", 'w')
@@ -206,7 +230,7 @@ def publish_counters():
             f.close()
             myCounter.publish = False
             my_logprint("Publish Success for Pin " + k)
-                       
+                     
             
 
     
@@ -239,9 +263,11 @@ try:
     my_logprint("Listenin ... " ) 
     
     while(1):
-        time.sleep(int(SLEEP_SECONDS))
-        publish_counters()
-        
+        try:
+            time.sleep(int(SLEEP_SECONDS))
+            publish_counters()
+        except Exception as inst:
+            my_logprint("Exception in main loop ")
        
           
     
