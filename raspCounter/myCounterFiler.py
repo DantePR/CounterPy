@@ -7,7 +7,8 @@ import urllib2
 import os
 import json
 import sys
-from socketIO_client import SocketIO, LoggingNamespace
+import logging
+import threading
 
 #GPIO.setmode(GPIO.BCM)
 
@@ -30,18 +31,19 @@ Machines = {}
 Counters = {}
 ConfigVals = {}
 onlineMode = True
-
+#logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.WARNING)
 #time.sleep(int(120))
-print "Hi, Starting .... if your reading this call 480-249-1942"
-print "Parameters in File: "
-print " "
+#print "Hi, Starting .... if your reading this call 480-249-1942"
+#print "Parameters in File: "
+#print " "
 
 with open('/media/USBHDD/projects/gpioCounter/config/endpoint.config') as c:
     for line in c:
         line = line.rstrip()
         mySetupList = line.split('=');
         ConfigVals[mySetupList[0]] = mySetupList[1]
-        print mySetupList
+        logging.warning(mySetupList)
     
     
     
@@ -64,8 +66,8 @@ Counters={}
 
 def my_logprint(message):
     if BOXDEBUG == 'True':
-        print message    
-        sys.stdout.flush()
+        logging.info(message)
+        
 
 
 def httpGetReq(values,inboundURL):
@@ -79,9 +81,11 @@ def httpGetReq(values,inboundURL):
         
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
+        logging.error(e.read())
         onlineMode = False
         data ={}
     except urllib2.URLError as e:
+        logging.error(e.read())
         my_logprint("URLError")
         onlineMode = False
         data ={}
@@ -136,10 +140,15 @@ def on_auth_response(args):
 
     
 def my_callback(gpio_id, val):
-    my_logprint("Edge detected on " + str(gpio_id))
-    #my_logprint(Counters)
-    myCallBackCount = Counters[str(gpio_id)]
-    myCallBackCount.add_tick(1)
+    
+   
+    try:
+        lock = threading.Lock()
+        lock.acquire()
+        myCallBackCount = Counters[str(gpio_id)]
+        myCallBackCount.add_tick(1)
+    finally:
+        lock.release()
     my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
     
 def httpPostReq(values,inboundURL):
@@ -153,10 +162,12 @@ def httpPostReq(values,inboundURL):
         
     except urllib2.HTTPError as e:
         my_logprint(str(e.code) + " " + e.read())
+        logging.error(e.read())
         onlineMode = False
         data ={} 
     except urllib2.URLError as e:
         my_logprint("URLError")
+        logging.error(e.read())
         onlineMode = False
         data ={} 
     else:
@@ -184,12 +195,10 @@ def check_updates():
     for f in file_names:
         myIndex=f.index('.web')
         machine_id=f[0:myIndex]
-        print 'myMachine:' + str(machine_id)
         myCounter=Counters[str(machine_id)]
         
         with open(relevant_path + f) as fc:
             tempLine = fc.read()
-            print 'temp line: ' + tempLine
             myCounter.totalcount = int(tempLine)
             myCounter.publish = True
         os.remove(relevant_path+f)
@@ -242,13 +251,12 @@ try:
     myLoadValues=httpGetReq(values,GETALL_URL)
     myDataObj={}
     if (myLoadValues):
-        print 'my values ' + myLoadValues
+        logging.info('my values ' + myLoadValues)
         f = open("/media/USBHDD/projects/gpioCounter/config/counters.config", 'w')
         f.write(str(myLoadValues))
         f.flush()
         f.close()
         myDataObj = json.loads(myLoadValues)
-        
         
     else:
         with open("/media/USBHDD/projects/gpioCounter/config/counters.config") as fc:
@@ -267,7 +275,7 @@ try:
             time.sleep(int(SLEEP_SECONDS))
             publish_counters()
         except Exception as inst:
-            my_logprint("Exception in main loop ")
+            logging.error(inst.read())
        
           
     
