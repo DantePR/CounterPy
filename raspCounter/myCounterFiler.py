@@ -20,11 +20,23 @@ class counterObj:
         self.totalcount = totalcount
         self.publish = False
         self.offline = False
+        self.lock = threading.Lock()
         
         
     def add_tick(self, tick):
-        self.totalcount = self.totalcount + 1
-        self.publish = True
+        self.lock.acquire()
+        try:
+            self.totalcount = self.totalcount + 1
+            self.publish = True
+        finally:
+            self.lock.release()
+    def setPublish(self,publish):
+        self.lock.acquire()
+        try:
+            self.publish = publish
+        finally:
+            self.lock.release()
+        
         
         
 Machines = {}
@@ -140,15 +152,8 @@ def on_auth_response(args):
 
     
 def my_callback(gpio_id, val):
-    
-   
-    try:
-        lock = threading.Lock()
-        lock.acquire()
-        myCallBackCount = Counters[str(gpio_id)]
-        myCallBackCount.add_tick(1)
-    finally:
-        lock.release()
+    myCallBackCount = Counters[str(gpio_id)]
+    myCallBackCount.add_tick(1)
     my_logprint( "Total Amt : " + str(myCallBackCount.totalcount))
     
 def httpPostReq(values,inboundURL):
@@ -208,7 +213,6 @@ def check_updates():
     
 def publish_counters():
     localMode = onlineMode
-    #my_logprint("onlineMode: " + str(onlineMode))
     global Counters
     for k in Counters.keys():
         check_updates()
@@ -231,13 +235,21 @@ def publish_counters():
                 myCounter.totalcount = myCounter.totalcount + thisCounterValueWeb_out    
                 
         if myCounter.publish == True:
+            
+            myCounter.setPublish(False)
+            msg = '{"msgType":"COUNTER_UPDATE","machineID":"'+ str(myCounter.machineID)\
+            + '","gpio_id":"' + str(myCounter.gpioPin)+\
+            '","totalcount":"'+str(myCounter.totalcount)+\
+            '","counter_type":"'+str(myCounter.counterType)+'"}'
+               
+            
             my_logprint("Found Publish for Pin " + k)
             f = open(relevant_path +str(k) + ".counter", 'w')
-            msg = '{"msgType":"COUNTER_UPDATE","machineID":"'+ str(myCounter.machineID) + '","gpio_id":"' + str(myCounter.gpioPin)+ '","totalcount":"'+str(myCounter.totalcount)+'","counter_type":"'+str(myCounter.counterType)+'"}'
+            
             f.write(msg)
             f.flush()
             f.close()
-            myCounter.publish = False
+            
             my_logprint("Publish Success for Pin " + k)
                      
             
