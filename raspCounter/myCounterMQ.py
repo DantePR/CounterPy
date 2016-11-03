@@ -206,11 +206,15 @@ def publish_counters(client):
     included_extenstions = ['counter'];
     file_names = [fn for fn in os.listdir(relevant_path) if any([fn.endswith(ext) for ext in included_extenstions])];
     for f in file_names:
+        my_logprint(f) 
         myIndex=f.index('.counter')
         output = subprocess.check_output("cat "+relevant_path+f, shell=True)
-        myOutObj = json.loads(output)
-        gpio=myOutObj['gpio_id']
-        numCount=int(myOutObj['totalcount'])
+        #myOutObj = json.loads(output)
+        #gpio=myOutObj['gpio_id']
+        #numCount=int(myOutObj['totalcount'])
+        gpio=f[:myIndex]
+        my_logprint(gpio) 
+        numCount=int(output)
         myCounter = Counters[gpio]
         if myCounter.totalcount != numCount:
             #client.publish("publish_counter",output)

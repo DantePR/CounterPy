@@ -9,6 +9,8 @@ import json
 import sys
 import logging
 import threading
+import shlex
+from subprocess import call
 
 #GPIO.setmode(GPIO.BCM)
 
@@ -62,6 +64,7 @@ Machines = {}
 Counters = {}
 ConfigVals = {}
 onlineMode = True
+CommandString = './pulse'
 logging.basicConfig(level=logging.INFO)
 #logging.basicConfig(level=logging.WARNING)
 #time.sleep(int(120))
@@ -136,10 +139,12 @@ def pullCounterValFromCloud(in_counterType,machineID):
 
       
 def on_auth_response(args):
+    global CommandString
     my_logprint("Handshake resp")
     my_logprint(args)
     pinCounterValueWeb_in = 0
     pinCounterValueWeb_out = 0
+    myParameters ={}
     if args['isvalid'] == 'true':
         my_logprint('valid')
         Machines = args['machines']
@@ -158,17 +163,23 @@ def on_auth_response(args):
                 my_logprint('pinCounterValueWeb_out:' + str(pinCounterValueWeb_out))
                 my_logprint('gpio_id_in:' + str(m['gpio_id_in']))
                 my_logprint('gpio_id_out:' + str(m['gpio_id_out']))
-                tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
-                tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
-                Counters[str(m['gpio_id_in'])] = tempCounter_in
-                Counters[str(m['gpio_id_out'])] = tempCounter_out
-                lasCounterList[str(m['gpio_id_in'])] = pinCounterValueWeb_in
-                lasCounterList[str(m['gpio_id_out'])] = pinCounterValueWeb_out
-                RPIO.add_interrupt_callback(int(m['gpio_id_in']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
-                                 threaded_callback=True,debounce_timeout_ms=int(m['gpio_dt_ms_in']))
-                RPIO.add_interrupt_callback(int(m['gpio_id_out']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
-                                 threaded_callback=True,debounce_timeout_ms=int(m['gpio_dt_ms_out']))
-
+                
+                CommandString = CommandString + ' ' + str(m['gpio_id_in']).zfill(2) + str(pinCounterValueWeb_in) + " " + str(m['gpio_id_out']).zfill(2) + str(pinCounterValueWeb_out) ;
+                my_logprint('CommandString:' + CommandString)
+                #tempCounter_in = counterObj(str(m['gpio_id_in']),'IN',m['machine_id'],pinCounterValueWeb_in,0)
+                #tempCounter_out = counterObj(str(m['gpio_id_out']),'OUT',m['machine_id'],pinCounterValueWeb_out,0)
+                #Counters[str(m['gpio_id_in'])] = tempCounter_in
+                #Counters[str(m['gpio_id_out'])] = tempCounter_out
+                #lasCounterList[str(m['gpio_id_in'])] = pinCounterValueWeb_in
+                #lasCounterList[str(m['gpio_id_out'])] = pinCounterValueWeb_out
+                
+                #RPIO.add_interrupt_callback(int(m['gpio_id_in']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                #                 threaded_callback=True,debounce_timeout_ms=int(m['gpio_dt_ms_in']))
+                #RPIO.add_interrupt_callback(int(m['gpio_id_out']), my_callback,edge='falling',pull_up_down=RPIO.PUD_UP,\
+                #                 threaded_callback=True,debounce_timeout_ms=int(m['gpio_dt_ms_out']))
+        
+        call(shlex.split(CommandString))
+                
     
 
     
@@ -288,7 +299,7 @@ try:
         
     on_auth_response(myDataObj)
     
-    RPIO.wait_for_interrupts(threaded=True)
+    #RPIO.wait_for_interrupts(threaded=True)
     
     
     my_logprint("Listenin ... " ) 
@@ -296,7 +307,7 @@ try:
     while(1):
         try:
             time.sleep(int(SLEEP_SECONDS))
-            publish_counters()
+            #publish_counters()
         except Exception as inst:
             logging.error(inst.read())
        
